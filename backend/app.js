@@ -9,7 +9,8 @@ const app = express();
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/claimsManagement");
+const uri = "mongodb+srv://parvej0ali:Hy2A6bLzhE7kPmRS@cluster0.aijfsfk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+mongoose.connect(uri);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
